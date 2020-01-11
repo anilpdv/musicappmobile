@@ -3,10 +3,9 @@ import "./App.css";
 import SongsList from "./components/SongsListView/SongsList";
 import AudioPlayer from "./components/SongPlayer/AudioPlayer";
 
-
 const App: React.FC = () => {
   return (
-    <div className="App p-6">
+    <div className="App ">
       <SongsList />
       <AudioPlayer />
     </div>

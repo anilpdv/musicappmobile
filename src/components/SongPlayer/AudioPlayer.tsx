@@ -119,7 +119,7 @@ function AudioPlayer() {
     };
 
     return (
-        <div className="AudioPlayer">
+        <div className="AudioPlayer p-4">
             <div className="AudioPlayer-contents">
                 {/* AudioPlayer-meta-data flex container start*/}
                 <div className="AudioPlayer-meta-data">
@@ -153,28 +153,7 @@ function AudioPlayer() {
                             {author}
                         </span>
                     </div>
-                    {/* <div className="AudioPlayer-favourite">
-                        {songsPlaying[songIndex] &&
-                            checkFavouriteExists(songsPlaying[songIndex].id, favourites) ? (
-                                <i className="fas fa-heart fah" />
-                            ) : (
-                                <i
-                                    className="far fa-heart fah"
-                                    onClick={() => {
-                                        console.log("favoures", songsPlaying[songIndex]);
-                                        addFavouritesToLocalStorage([
-                                            {
-                                                id: songsPlaying[songIndex].id,
-                                                name: songsPlaying[songIndex].name,
-                                                singer: songsPlaying[songIndex].singer,
-                                                src: songsPlaying[songIndex].src,
-                                                img: songsPlaying[songIndex].img
-                                            }
-                                        ]);
-                                    }}
-                                />
-                            )}
-                    </div> */}
+                    
                     <div className="AudioPlayer-Player-actions">
                         {/*AudioPlayer-Player-buttons flex*/}
                         <audio
@@ -186,7 +165,7 @@ function AudioPlayer() {
                             onEnded={handleEnded}
                             onTimeUpdate={handleTimeUpdate}
                         />
-                        <div className="AudioPlayer-Player-buttons">
+                        {/* <div className="AudioPlayer-Player-buttons">
                             {loop ? (
                                 <i className="fal fa-repeat-1-alt fan-1" onClick={handleRepeat} />
                             ) : (
@@ -200,8 +179,8 @@ function AudioPlayer() {
                                 )}
                             <i className="fas fa-step-forward fan" onClick={handleNext} />
                             <i className="fal fa-random fan" />
-                        </div>{" "}
-                        <div className="AudioPlayer-Player-content">
+                        </div>{" "} */}
+                        {/* <div className="AudioPlayer-Player-content">
                             <span className="AudioPlayer-time">{currentTime.toFixed(2)}</span>{" "}
                             <div className="AudioPlayer-Player-progress">
                                 {" "}
@@ -214,15 +193,15 @@ function AudioPlayer() {
                                 <div className="Progress-ball" style={{ left: progress + "%" }} />{" "}
                             </div>
                             <span className="AudioPlayer-time">{duration.toFixed(2)}</span>{" "}
-                        </div>
+                        </div> */}
                     </div>
 
-                    <div className="AudioPlayer-Player-radio">
+                    {/* <div className="AudioPlayer-Player-radio">
                         <a href="/queue">
                             <i className="fal fa-list-ul" />
                         </a>
                     </div>
-
+ */}
                     <span className="fal fa-volume-up" />
                     <div className="AudioPlayer-Player-volume">
                         <div
