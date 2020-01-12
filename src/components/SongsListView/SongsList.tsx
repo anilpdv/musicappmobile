@@ -29,8 +29,8 @@ function SongsList() {
   };
 
   return (
-    <div>
-      <div className="search  h-32" data-aos="fade-left">
+    <div className="p-3">
+      <div className="search  h-32 " data-aos="fade-left">
         <form onSubmit={onSubmit}>
           <input
             className="Input bg-blue-200 appearance-none  rounded p-5  py-5 m-4   leading-tight text-white "

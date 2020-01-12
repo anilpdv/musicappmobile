@@ -43,7 +43,7 @@ export default function Song({song}: props) {
       </div>
       <a
         href={`https://warm-springs-86808.herokuapp.com/api/download/${
-          song.id
+          song.id.videoId
         }/song/${lrtrim(title)}`}
         download
         className="mt-3">
