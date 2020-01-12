@@ -119,109 +119,61 @@ function AudioPlayer() {
     };
 
     return (
-        <div className="AudioPlayer p-4">
-            <div className="AudioPlayer-contents">
-                {/* AudioPlayer-meta-data flex container start*/}
-                <div className="AudioPlayer-meta-data">
-                    {/*image Audio palyer*/}
-                    <div className="AudioPlayer-image">
-                        {songsPlaying ? songsPlaying[songIndex] ? (
-                            <div
-                                className="Image"
-                                style={{
-                                    backgroundImage: `url("${songsPlaying[songIndex].snippet.thumbnails.medium.url}")`
-                                }}
-                            />
-                        ) : (
-                                <div
-                                    className="Image"
-                                    style={{
-                                        backgroundImage:
-                                            "url('https://apkdl.in/apkimage/51MDy8ePKl1XLi8ZizQK28OqOwvfq8LmMPz9OyJA1zsVnrSH6AJZ-BGJPeFhDe1Yp7nl=rw')"
-                                    }}
-                                />
-                            ) : ('')}
-                    </div>
-                    <div className="AudioPlayer-text">
-                        <span className="AudioPlayer-song-title">
-                            {" "}
-                            {title}
-                        </span>
-                        <br />
-                        <span className="AudioPlayer-song-author">
-                            {" "}
-                            {author}
-                        </span>
-                    </div>
-                    
-                    <div className="AudioPlayer-Player-actions">
-                        {/*AudioPlayer-Player-buttons flex*/}
-                        <audio
-                            id="player"
-                            autoPlay
-                            src={songsPlaying ? baseurl + listenEndPoint + '/' + songsPlaying[songIndex].id.videoId : ''}
-                            onPlay={handlePlaying}
-                            onPause={handlePausing}
-                            onEnded={handleEnded}
-                            onTimeUpdate={handleTimeUpdate}
+        <div className="  AudioPlayer rounded-t " data-aos="fade-left">
+           <div className="flex pb-4 Song rounded pt-4   shadow">
+ <div className="w-2/4 flex">
+                 {songsPlaying ? songsPlaying[songIndex] ? (
+                    <img
+                        className="ml-4 w-12 h-12 rounded-full mr-5"
+                        src={songsPlaying[songIndex].snippet.thumbnails.medium.url}
+                    />
+                ) : (
+                        <img
+                            className=""
+                            src="https://apkdl.in/apkimage/51MDy8ePKl1XLi8ZizQK28OqOwvfq8LmMPz9OyJA1zsVnrSH6AJZ-BGJPeFhDe1Yp7nl=rw"
                         />
-                        {/* <div className="AudioPlayer-Player-buttons">
-                            {loop ? (
-                                <i className="fal fa-repeat-1-alt fan-1" onClick={handleRepeat} />
-                            ) : (
-                                    <i className="fal fa-repeat-alt fan" onClick={handleRepeat} />
-                                )}
-                            <i className="fas fa-step-backward fan" onClick={handlePrev} />
-                            {isPlaying ? (
-                                <i className="fas fa-pause fap" onClick={handlePause} />
-                            ) : (
-                                    <i className="fas fa-play fam" onClick={handlePlay} />
-                                )}
-                            <i className="fas fa-step-forward fan" onClick={handleNext} />
-                            <i className="fal fa-random fan" />
-                        </div>{" "} */}
-                        {/* <div className="AudioPlayer-Player-content">
-                            <span className="AudioPlayer-time">{currentTime.toFixed(2)}</span>{" "}
-                            <div className="AudioPlayer-Player-progress">
-                                {" "}
-                                <div className="AudioPlayer-Player-Progress-container">
-                                    {" "}
-                                    <div className="Progress-back">
-                                        <div className="Progress" style={{ width: progress + "%" }} />{" "}
-                                    </div>{" "}
-                                </div>
-                                <div className="Progress-ball" style={{ left: progress + "%" }} />{" "}
-                            </div>
-                            <span className="AudioPlayer-time">{duration.toFixed(2)}</span>{" "}
-                        </div> */}
-                    </div>
 
-                    {/* <div className="AudioPlayer-Player-radio">
-                        <a href="/queue">
-                            <i className="fal fa-list-ul" />
-                        </a>
-                    </div>
- */}
-                    <span className="fal fa-volume-up" />
-                    <div className="AudioPlayer-Player-volume">
-                        <div
-                            className="AudioPlayer-Audio-Progress"
-                            style={{ width: value * 10 + "%" }}
-                        >
-                            {" "}
-                            <input
-                                className="slider"
-                                type="range"
-                                min="0"
-                                step="0.2"
-                                max="10"
-                                value={value}
-                                onChange={handleChangeValue}
-                            />
-                        </div>
-                    </div>
+                    ) : ('')}
+
+                <div className="AudioPlayer-text">
+                    <span className="text-base" style={{color:'#EDF5E1'}}>
+                        {" "}
+                        {title.substring(0,10) + '..'}
+                    </span>
+                    <br />
+                    <span className="text-xs">
+                        {" "}
+                        {author.substring(0,10)}
+                    </span>
                 </div>
-                {/* AudioPlayer-meta-data flex container ending*/}
+        
+        </div>
+        
+               <div className="AudioPlayer-circle-icon ml-8 mt-2">
+ <i className="far fa-step-backward fan text-2xl" onClick={handlePrev} style={{color:'#9cf7bd'}}/>
+                    {isPlaying ? (
+                        <i className="fas fa-pause-circle text-3xl px-3" style={{color:'#9cf7bd'}}onClick={handlePause} />
+                    ) : (
+                            <i className="fas fa-play-circle text-3xl text-white px-3" style={{color:'#9cf7bd'}} onClick={handlePlay} />
+
+                        )}
+ <i className="far fa-step-forward text-2xl" style={{color:'#9cf7bd'}}onClick={handleNext} />
+                </div>
+            </div>
+
+
+            <div className="">
+                {/*AudioPlayer-Player-buttons flex*/}
+                <audio
+                    id="player"
+                    autoPlay
+                    src={songsPlaying ? baseurl + listenEndPoint + '/' + songsPlaying[songIndex].id.videoId : ''}
+                    onPlay={handlePlaying}
+                    onPause={handlePausing}
+                    onEnded={handleEnded}
+                    onTimeUpdate={handleTimeUpdate}
+                />
+
             </div>
         </div>
     );

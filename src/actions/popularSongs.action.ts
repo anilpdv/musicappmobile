@@ -33,6 +33,7 @@ export const getSongsBySearch = (query: string) => async (dispatch: Dispatch) =>
         const url = baseurl + searchEndPoint + '/' + query;
         const resp: AxiosResponse = await axios.get(url)
         dispatch(getSongsBySearchActionCreator(resp.data))
+        dispatch(getPopularSongsActionCreator(null))
     } catch (err) {
         dispatch(getErrorsActionCreator(err))
     }
